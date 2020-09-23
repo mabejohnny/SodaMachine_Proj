@@ -9,7 +9,8 @@ namespace SodaMachine.cs
 
 
         //member variables
-
+        SodaMachine SodaMachine = new SodaMachine();
+        Customer customer = new Customer();
 
 
 

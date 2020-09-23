@@ -7,6 +7,8 @@ namespace SodaMachine.cs
     class Card : Wallet
     {
         //member variables
+        public double availableFunds;
+        private double AvailableFunds;
 
 
 

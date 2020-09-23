@@ -8,7 +8,7 @@ namespace SodaMachine.cs
     {
 
         //member variables
-        
+        public List<Can> cans;
 
 
 

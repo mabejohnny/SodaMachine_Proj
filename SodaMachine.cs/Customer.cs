@@ -4,11 +4,12 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Customer
+    class Customer : Simulation
     {
 
         //member variables
         BackPack backpack = new BackPack();
+        Wallet wallet = new Wallet();
 
 
 
@@ -21,5 +22,13 @@ namespace SodaMachine.cs
 
 
         //member methods
+        
+
+
+
+
+
+
+
     }
 }

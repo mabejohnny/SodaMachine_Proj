@@ -4,19 +4,23 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    abstract class Cans : Cola
+    abstract class Can : Cola
     {
 
 
         //member variables
-
+        public string name;
+        public double Cost;
+        private double cost;
 
 
 
 
         //constructor
-        public Cans()
+        public Can()
         {
+            this.name = name;
+            this.cost 
 
         }
 

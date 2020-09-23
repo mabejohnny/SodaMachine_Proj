@@ -4,17 +4,23 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class SodaMachine
+    class SodaMachine : Simulation
     {
 
         //member variables
-
+        public List<Coin> register;
+        public List<Can> inventory;
 
 
 
         //constructor
         public SodaMachine()
         {
+            register = new List<Coin>();
+            register.Add(new Coin());
+
+            inventory = new List<Can>();
+            inventory.Add(new Can());
 
         }
 
@@ -22,5 +28,14 @@ namespace SodaMachine.cs
 
 
         //member methods
+        public void PerformTransaction()
+        {
+
+        }
+
+
+
+
+
     }
 }

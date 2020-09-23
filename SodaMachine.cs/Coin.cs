@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Coins 
+    public abstract class Coin 
     {
 
         //member variables
@@ -13,8 +13,9 @@ namespace SodaMachine.cs
 
 
 
+
         //constructor
-        public Coins()
+        public Coin()
         {
 
         }
