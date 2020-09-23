@@ -21,7 +21,10 @@ namespace SodaMachine.cs
         public SodaMachine()
         {
             register = new List<Coin>();
-            register.Add(new Coin());
+            register.Add(new Coin("Quarters", 5.00));
+            register.Add(new Coin("Dimes", 1.00));
+            register.Add(new Coin("Nickles", 1.00));
+            register.Add(new Coin("Pennies", 1.00));
 
             inventory = new List<Can>();
             inventory.Add(new Can("Cola", .35));
@@ -52,10 +55,11 @@ namespace SodaMachine.cs
                 }
                 else if(moneyInserted > item.Cost)
                 {
-                    Console.WriteLine("Not enough funds inserted!" + "\n" + "Please take your money");
+                    Console.WriteLine("Not enough funds inserted!" + "\n" + "$ " + moneyInserted + " has been returned to your wallet");
                     ReturnFunds();
 
                 }
+
 
             }
 

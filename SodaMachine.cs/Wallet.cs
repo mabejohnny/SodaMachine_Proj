@@ -17,7 +17,9 @@ namespace SodaMachine.cs
         public Wallet()
         {
             coins = new List<Coin>();
-            coins.Add(new Coin());
+            coins.Add(new Coin("Quarters", 2.75));
+            coins.Add(new Coin("Dimes", .50));
+            coins.Add(new Coin("Nickles", 1.75));
 
         }
 

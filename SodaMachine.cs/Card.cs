@@ -14,8 +14,9 @@ namespace SodaMachine.cs
 
 
         //constructor
-        public Card()
+        public Card(double AvailableFunds)
         {
+            this.AvailableFunds = 200;
 
         }
 

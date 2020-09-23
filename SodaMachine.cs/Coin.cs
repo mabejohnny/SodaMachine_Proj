@@ -18,8 +18,10 @@ namespace SodaMachine.cs
 
 
         //constructor
-        public Coin()
+        public Coin(string name, double Value)
         {
+            this.name = name;
+            this.Value = Value;
 
         }
 
