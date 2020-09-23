@@ -4,28 +4,25 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    abstract public class Inventory
+    class Wallet
     {
-
-
         //member variables
-        public string name;
-        public int price;
-        public int quantity;
-
-
 
 
 
         //constructor
-        public Inventory()
+        public Wallet()
         {
 
         }
 
 
-
-
         //member methods
+
+
+
+
+
+
     }
 }
