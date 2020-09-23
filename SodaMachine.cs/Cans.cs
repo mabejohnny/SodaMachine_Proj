@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Cans : Inventory
+    abstract class Cans : Cola
     {
 
 

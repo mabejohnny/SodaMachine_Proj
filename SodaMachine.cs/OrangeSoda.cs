@@ -4,28 +4,21 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Coins 
+    class OrangeSoda : SodaMachine
     {
-
         //member variables
 
 
 
 
-
         //constructor
-        public Coins()
+        public OrangeSoda()
         {
 
         }
 
 
 
-
         //member methods
-
-
-
-
     }
 }

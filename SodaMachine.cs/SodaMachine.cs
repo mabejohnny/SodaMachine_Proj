@@ -4,18 +4,16 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Display
+    class SodaMachine
     {
-
 
         //member variables
 
 
 
 
-
         //constructor
-        public Display()
+        public SodaMachine()
         {
 
         }

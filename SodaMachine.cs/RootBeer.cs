@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class ShoppingCart
+    class RootBeer : SodaMachine 
     {
 
         //member variables
@@ -12,19 +12,14 @@ namespace SodaMachine.cs
 
 
 
-
         //constructor
-        public ShoppingCart()
+        public RootBeer()
         {
 
         }
 
 
 
-
         //member methods
-
-
-
     }
 }

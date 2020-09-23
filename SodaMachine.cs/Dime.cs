@@ -4,17 +4,15 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Coins 
+    class Dime
     {
-
         //member variables
 
 
 
 
-
         //constructor
-        public Coins()
+        public Dime()
         {
 
         }
@@ -23,9 +21,5 @@ namespace SodaMachine.cs
 
 
         //member methods
-
-
-
-
     }
 }

@@ -4,22 +4,19 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Money
+    class Customer
     {
 
-
         //member variables
-
-
+        BackPack backpack = new BackPack();
 
 
 
         //constructor
-        public Money()
+        public Customer()
         {
 
         }
-
 
 
 
