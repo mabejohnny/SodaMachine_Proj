@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    abstract class Can : Cola
+    public class Can 
     {
 
 
@@ -17,10 +17,10 @@ namespace SodaMachine.cs
 
 
         //constructor
-        public Can()
+        public Can(string name, double Cost)
         {
             this.name = name;
-            this.cost 
+            this.Cost = Cost;
 
         }
 

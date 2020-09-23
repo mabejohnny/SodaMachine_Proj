@@ -4,10 +4,13 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    public abstract class Coin 
+    public class Coin 
     {
 
         //member variables
+        public string name;
+        public double Value;
+        private double value;
 
 
 
