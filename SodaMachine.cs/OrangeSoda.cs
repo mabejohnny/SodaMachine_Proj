@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class OrangeSoda : SodaMachine
+    class OrangeSoda : Can
     {
         //member variables
 
@@ -14,6 +14,8 @@ namespace SodaMachine.cs
         //constructor
         public OrangeSoda()
         {
+            name = "Orange Soda";
+            Cost = .06;
 
         }
 

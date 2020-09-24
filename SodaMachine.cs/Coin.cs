@@ -10,7 +10,7 @@ namespace SodaMachine.cs
         //member variables
         public string name;
         public double Value;
-        private double value;
+        protected double value;
 
 
 
@@ -18,10 +18,12 @@ namespace SodaMachine.cs
 
 
         //constructor
-        public Coin(string name, double Value)
+        public Coin()
         {
             this.name = name;
             this.Value = Value;
+            
+            
 
         }
 

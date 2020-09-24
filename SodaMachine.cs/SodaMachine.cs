@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class SodaMachine : Simulation
+    class SodaMachine
     {
 
         //member variables
@@ -13,7 +13,8 @@ namespace SodaMachine.cs
         public List<Can> inventory;
 
         public double changeToReturn;
-        public double moneyInserted; 
+        public double moneyInserted;
+        public bool hasEnoughChange;
 
 
 
@@ -32,7 +33,8 @@ namespace SodaMachine.cs
             inventory.Add(new Can("Orange", .6));
 
             this.changeToReturn = changeToReturn;
-            this.moneyInserted = moneyInserted; 
+            this.moneyInserted = moneyInserted;
+            hasEnoughChange = true;
 
         }
 
@@ -41,22 +43,40 @@ namespace SodaMachine.cs
 
         //member methods
 
+
+
+
+
+
         public void ComparePaymentToCostOfItem(double moneyInserted, double Cost)
         {
             double changeToReturn = moneyInserted - Cost;
 
             foreach (Can item in inventory)
             {
-                if(moneyInserted == item.Cost)
+                
+                if (moneyInserted == item.Cost)
                 {
-                    AcceptPayment(); 
+                    AcceptPayment(moneyInserted);
                     Console.WriteLine("Payment accepted!");
                     DispenseSoda();
                 }
-                else if(moneyInserted > item.Cost)
+                else if (moneyInserted > item.Cost)
                 {
                     Console.WriteLine("Not enough funds inserted!" + "\n" + "$ " + moneyInserted + " has been returned to your wallet");
-                    ReturnFunds();
+                    CalculateReturnChange(moneyInserted);
+
+                }
+                else if (moneyInserted < item.Cost && hasEnoughChange == true)
+                {
+                    Console.WriteLine("Payment accepted");
+                    Console.WriteLine("Please wait for your change");
+                    DispenseSoda();
+                    CalculateReturnChange(moneyInserted);
+                }
+                else
+                {
+                    Console.WriteLine("Error! Machine low on change" + "\n" + "Please insert exact change and try again!");
 
                 }
 
@@ -68,8 +88,10 @@ namespace SodaMachine.cs
 
 
 
-        public void AcceptPayment() //take funds from wallet and put into register 
+        public void AcceptPayment(double moneyInserted) //take funds from wallet and put into register 
         {
+
+            register.Add(new Coin(moneyInserted)); //takes in 2 arguments. how can I do this differently 
 
         }
 
@@ -77,17 +99,25 @@ namespace SodaMachine.cs
 
         public void DispenseSoda()
         {
+            Console.WriteLine();
+            
 
         }
 
-        public void ReturnFunds()
+        public double CalculateReturnChange(double moneyInserted)
         {
+            double changeToReturn = moneyInserted - 
 
+            if (changeToReturn < 0)
+            {
+                changeToReturn = 0;
+            }
+
+            return changeToReturn;
         }
-
-
-
-
+            
+        
 
     }
+    
 }

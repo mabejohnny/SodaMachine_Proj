@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Card : Wallet
+    class Card 
     {
         //member variables
         public double AvailableFunds;
@@ -16,7 +16,7 @@ namespace SodaMachine.cs
         //constructor
         public Card(double AvailableFunds)
         {
-            this.AvailableFunds = 200;
+            this.AvailableFunds = AvailableFunds;
 
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class BackPack : Customer
+    class BackPack 
     {
 
         //member variables
@@ -21,7 +21,10 @@ namespace SodaMachine.cs
         }
 
         //member methods
+        public void AddCanToBackPack(string )
+        {
 
+        }
 
     }
 }

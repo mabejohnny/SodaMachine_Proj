@@ -17,7 +17,7 @@ namespace SodaMachine.cs
 
 
         //constructor
-        public Can(string name, double Cost)
+        public Can()
         {
             this.name = name;
             this.Cost = Cost;
