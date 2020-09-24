@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace SodaMachine.cs
 {
@@ -9,7 +10,14 @@ namespace SodaMachine.cs
 
         //member variables
         public string name;
-        public double Value;
+        
+        public double Value
+        {
+            get
+            {
+                return value;
+            }
+        }
         protected double value;
 
 
@@ -17,15 +25,6 @@ namespace SodaMachine.cs
 
 
 
-        //constructor
-        public Coin()
-        {
-            this.name = name;
-            this.Value = Value;
-            
-            
-
-        }
 
 
 

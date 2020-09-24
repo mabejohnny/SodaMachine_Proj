@@ -12,7 +12,9 @@ namespace SodaMachine.cs
             //create checkout which will display total cost/split payment credit and cash
             //take/calculate payment and change 
             //dispense item, remove from inventory
+            Simulation simulation = new Simulation();
 
+          
         }
     }
 }

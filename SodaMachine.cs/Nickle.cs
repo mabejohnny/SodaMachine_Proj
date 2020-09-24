@@ -16,7 +16,6 @@ namespace SodaMachine.cs
         public Nickle()
         {
             name = "Nickle";
-            Value = .05;
             value = .05;
 
         }

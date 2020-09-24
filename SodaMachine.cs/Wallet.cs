@@ -17,15 +17,35 @@ namespace SodaMachine.cs
         public Wallet()
         {
             coins = new List<Coin>();
-            coins.Add(new Coin("Quarters", 2.75));
-            coins.Add(new Coin("Dimes", .50));
-            coins.Add(new Coin("Nickles", 1.75));
+            CreateWallet();
+            
+           
 
         }
 
 
         //member methods
 
+        public void CreateWallet()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                coins.Add(new Quarter());
+            }
+            for (int i = 0; i < 11; i++)
+            {
+                coins.Add(new Dime());
+            }
+            for (int i = 0; i < 11; i++)
+            {
+                coins.Add(new Nickle());
+            }
+        }
+
+        public void AcceptPaymentToWallet()
+        {
+
+        }
 
 
 

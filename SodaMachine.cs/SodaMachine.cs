@@ -22,57 +22,109 @@ namespace SodaMachine.cs
         public SodaMachine()
         {
             register = new List<Coin>();
-            register.Add(new Coin("Quarters", 5.00));
-            register.Add(new Coin("Dimes", 1.00));
-            register.Add(new Coin("Nickles", 1.00));
-            register.Add(new Coin("Pennies", 1.00));
+            CreateRegister();
 
             inventory = new List<Can>();
-            inventory.Add(new Can("Cola", .35));
-            inventory.Add(new Can("Root Beer", .60));
-            inventory.Add(new Can("Orange", .6));
+            CreateInventory();
 
             this.changeToReturn = changeToReturn;
             this.moneyInserted = moneyInserted;
             hasEnoughChange = true;
+
+          
+        }
+
+
+        //member methods
+
+
+        public void CreateRegister()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                register.Add(new Quarter());
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                register.Add(new Dime());
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                register.Add(new Nickle());
+            }
+            for (int i = 0; i < 50; i++)
+            {
+                register.Add(new Penny());
+            }
+
+        }
+
+        public void CreateInventory()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                inventory.Add(new Cola());
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                inventory.Add(new OrangeSoda());
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                inventory.Add(new RootBeer());
+            }
+        }
+
+        public void AcceptPaymentToRegister(double moneyInserted) //take funds from wallet and put into register 
+        {
+
+            //register.Add(new Coin(moneyInserted)); //takes in 2 arguments. how can I do this differently 
 
         }
 
 
 
 
-        //member methods
 
 
 
 
 
 
-        public void ComparePaymentToCostOfItem(double moneyInserted, double Cost)
+
+
+
+
+
+
+
+
+
+        public void ComparePaymentToCostOfItem(double moneyInserted, double Cost, string purchasedCan)
         {
             double changeToReturn = moneyInserted - Cost;
 
             foreach (Can item in inventory)
             {
-                
+
                 if (moneyInserted == item.Cost)
                 {
                     AcceptPayment(moneyInserted);
                     Console.WriteLine("Payment accepted!");
-                    DispenseSoda();
+                    DispenseSoda(purchasedCan);
                 }
                 else if (moneyInserted > item.Cost)
                 {
                     Console.WriteLine("Not enough funds inserted!" + "\n" + "$ " + moneyInserted + " has been returned to your wallet");
-                    CalculateReturnChange(moneyInserted);
+                    //CalculateReturnChange(moneyInserted);
 
                 }
                 else if (moneyInserted < item.Cost && hasEnoughChange == true)
                 {
                     Console.WriteLine("Payment accepted");
                     Console.WriteLine("Please wait for your change");
-                    DispenseSoda();
-                    CalculateReturnChange(moneyInserted);
+                    DispenseSoda(purchasedCan);
+                    //CalculateReturnChange(moneyInserted);
                 }
                 else
                 {
@@ -88,36 +140,60 @@ namespace SodaMachine.cs
 
 
 
-        public void AcceptPayment(double moneyInserted) //take funds from wallet and put into register 
-        {
+       
 
-            register.Add(new Coin(moneyInserted)); //takes in 2 arguments. how can I do this differently 
+
+
+        public void DispenseSoda(string purchasedCan)
+        {
+            //foreach (Can item in inventory)
+            //{
+            //if(purchasedCan)
+            //{
+            //Console.WriteLine("Dispensing Soda");
+
+            //}
+            //else if()
+            //{
+
+            //}
+
+
+            //}
+
+
+
+            //}
+
+            //public void RemoveItemFromInventory()
+            //{
+
+            //}
+
+            //public void AddItemToBackPack(Can cans)
+            //{
+            //backpack.products.Add(cans);
+
+
+            //}
+
+
+            //public double CalculateReturnChange(double moneyInserted)
+            //{
+            //double changeToReturn = moneyInserted -
+
+            //if (changeToReturn < 0)
+            //{
+            //changeToReturn = 0;
+            //}
+
+            //return changeToReturn;
+            //}
+
+
 
         }
-
-
-
-        public void DispenseSoda()
-        {
-            Console.WriteLine();
-            
-
-        }
-
-        public double CalculateReturnChange(double moneyInserted)
-        {
-            double changeToReturn = moneyInserted - 
-
-            if (changeToReturn < 0)
-            {
-                changeToReturn = 0;
-            }
-
-            return changeToReturn;
-        }
-            
-        
 
     }
-    
+
 }

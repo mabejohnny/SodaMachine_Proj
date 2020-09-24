@@ -15,7 +15,7 @@ namespace SodaMachine.cs
         public OrangeSoda()
         {
             name = "Orange Soda";
-            Cost = .06;
+            cost = .06;
 
         }
 

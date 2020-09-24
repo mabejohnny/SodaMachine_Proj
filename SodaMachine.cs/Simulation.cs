@@ -11,6 +11,7 @@ namespace SodaMachine.cs
         //member variables
         SodaMachine SodaMachine = new SodaMachine();
         Customer customer = new Customer();
+        
 
 
 
@@ -25,5 +26,17 @@ namespace SodaMachine.cs
 
 
         //member methods
+        public void GetUserInfoFromMainMenu(string userChoiceMainMenu)
+        {
+          
+           
+
+        }
+
+
+
+
+
+
     }
 }

@@ -16,7 +16,6 @@ namespace SodaMachine.cs
         public Dime()
         {
              name = "Dime";
-             Value = .10;
              value = .10;
 
             

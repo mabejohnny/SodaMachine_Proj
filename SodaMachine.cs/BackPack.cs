@@ -16,15 +16,14 @@ namespace SodaMachine.cs
         //constructor
         public BackPack()
         {
+            cans = new List<Can>();
             
-                
+
+
         }
 
         //member methods
-        public void AddCanToBackPack(string )
-        {
-
-        }
+        
 
     }
 }
