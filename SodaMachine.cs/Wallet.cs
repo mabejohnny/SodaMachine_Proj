@@ -42,6 +42,16 @@ namespace SodaMachine.cs
             }
         }
 
+
+
+        public void RemoveFundsFromWallet()
+        {
+
+        }
+
+
+
+
         public void AcceptPaymentToWallet()
         {
 

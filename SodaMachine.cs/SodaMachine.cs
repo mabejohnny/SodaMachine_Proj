@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace SodaMachine.cs
@@ -75,23 +76,41 @@ namespace SodaMachine.cs
             }
         }
 
-        public void AcceptPaymentToRegister(double moneyInserted) //take funds from wallet and put into register 
+        public void AcceptPaymentToRegister(string amountToAdd) 
         {
+            if(amountToAdd == "1")
+            {
+                for (int i = 0; i < 4; i++)
+                {   
+                    register.Add(new Quarter());
 
-            //register.Add(new Coin(moneyInserted)); //takes in 2 arguments. how can I do this differently 
+                }
+                
+            }
+            else if(amountToAdd == "2")
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    register.Add(new Quarter());
+
+                }
+
+
+            }
+            else if (amountToAdd == "2")
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    register.Add(new Quarter());
+
+                }
+
+
+            }
+
+
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -137,12 +156,6 @@ namespace SodaMachine.cs
 
 
         }
-
-
-
-       
-
-
 
         public void DispenseSoda(string purchasedCan)
         {

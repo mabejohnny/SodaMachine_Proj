@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace SodaMachine.cs
@@ -25,7 +26,11 @@ namespace SodaMachine.cs
 
 
         //member methods
-        
+        public void RemoveFundsFromWallet(string amountChosen)
+        {
+            
+
+        }
 
 
 
