@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -75,6 +76,7 @@ namespace SodaMachine.cs
                 inventory.Add(new RootBeer());
             }
         }
+        
 
         public void AcceptPaymentToRegister(string amountToAdd) 
         {
@@ -113,15 +115,35 @@ namespace SodaMachine.cs
         }
 
 
-
-
-
-
-
-
-        public void ComparePaymentToCostOfItem(double moneyInserted, double Cost, string purchasedCan)
+        public void CheckToSeeIfThereIsEnoughMoneyInWallet(string amountChosen)
         {
-            double changeToReturn = moneyInserted - Cost;
+            if(amountChosen == "1")
+            {
+                amountChosen += 1.00;
+
+                if(amountChosen < //total in wallet )
+                {
+                    Console.WriteLine("Error!  There is not enough money in your wallet to complete this transaction");
+
+                }
+
+            }
+            else if (amountChosen == "2")
+            {
+                amountChosen += 2.00;
+
+            }
+            else if (amountChosen == "3")
+            {
+                amountChosen += 3.00;
+
+            }
+
+
+
+
+
+
 
             foreach (Can item in inventory)
             {
