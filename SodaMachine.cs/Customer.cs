@@ -10,10 +10,10 @@ namespace SodaMachine.cs
     {
 
         //member variables
-        BackPack backpack = new BackPack();
-        Wallet wallet = new Wallet();
+        public BackPack backpack = new BackPack();
+        public Wallet wallet = new Wallet();
         public string purchasedCan;
-        List<Can> cans;
+        public List<Can> cans;
 
 
 

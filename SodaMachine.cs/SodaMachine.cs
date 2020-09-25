@@ -71,6 +71,23 @@ namespace SodaMachine.cs
             }
         }
 
+        //public double method. foreach through wallet, return back
+        //If enough money is not passed in, don’t complete transaction and give the money back. 
+
+        public bool EnoughMoneyForPurchase(double moneyCustomerPaid, Can canSelected)
+        {
+            if (moneyCustomerPaid > canSelected.Cost)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void ReturnMoneyToCustomer(List<Coin> coinsGivenByCustomer, Customer customer)
+        {
+            customer.wallet.coins.AddRange(coinsGivenByCustomer);
+        }
+
 
 
         public void AcceptPaymentToRegister(double amountchosen)
@@ -168,32 +185,6 @@ namespace SodaMachine.cs
 
         }
 
-
-
-        public void CompareMoneyPassedIn(double moneyAdded, Can can)
-        {
-            foreach (Can item in inventory)
-            {   //not enough money refund
-                if (moneyAdded > item.Cost)
-                {
-                    RefundMoney(moneyAdded);
-
-                }
-                else if (moneyAdded == item.Cost || moneyAdded < item.Cost)
-                {
-                    AcceptPaymentToRegister(moneyAdded);
-                    CalculateChange(moneyAdded, can);
-
-
-                }
-
-
-
-
-
-
-            }
-        }
     }
 
 }

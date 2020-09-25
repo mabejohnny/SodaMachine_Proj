@@ -7,8 +7,8 @@ namespace SodaMachine.cs
     class Wallet 
     {
         //member variables
-        List<Coin> coins;
-        Card card = new Card();
+       public List<Coin> coins;
+       public Card card = new Card();
         
 
 
@@ -80,13 +80,9 @@ namespace SodaMachine.cs
 
 
 
-        public void AcceptPaymentToWallet()
-        {
+     
 
-        }
-
-
-        //public double method. foreach through wallet, return back
+      
 
 
     }
