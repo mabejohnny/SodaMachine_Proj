@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 namespace SodaMachine.cs
 {
@@ -12,7 +13,8 @@ namespace SodaMachine.cs
         BackPack backpack = new BackPack();
         Wallet wallet = new Wallet();
         public string purchasedCan;
-        
+        List<Can> cans;
+
 
 
 
@@ -26,12 +28,19 @@ namespace SodaMachine.cs
 
 
         //member methods
-        public void RemoveFundsFromWallet(string amountChosen)
+        public void AddToBackPack(string itemPurchased, Can can)
         {
-            
+            foreach (Can item in cans)
+            {
+                if (itemPurchased == item.name)
+                {
+                    backpack.cans.Add(item);
+                }
+            }
+
+
 
         }
-
 
 
 

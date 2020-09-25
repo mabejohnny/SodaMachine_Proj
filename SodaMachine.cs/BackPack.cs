@@ -17,13 +17,12 @@ namespace SodaMachine.cs
         public BackPack()
         {
             cans = new List<Can>();
-            
-
-
+           
         }
 
         //member methods
         
+
 
     }
 }

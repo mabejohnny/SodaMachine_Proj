@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace SodaMachine.cs
@@ -12,6 +14,7 @@ namespace SodaMachine.cs
         SodaMachine SodaMachine = new SodaMachine();
         Customer customer = new Customer();
         
+
 
 
 
@@ -36,25 +39,19 @@ namespace SodaMachine.cs
             }
             else if (userChoiceMainMenu == "2" || userChoiceMainMenu == "3")
             {
-                return userChoiceMainMenu;  //GetUserInfoFromMainMenu(); 
+                ;  //GetUserInfoFromMainMenu(); 
 
             }
-            else
-            {
-                Console.WriteLine(" * Error! Please Try Again * ");
-                MainMenu();
-            }
-
-
+   
 
         }
 
-        public void HowMuchToAddToRegister() 
+        public void HowMuchToAddToRegister()
         {
             Console.WriteLine("Please select from the following options: " + "\n" + "\n" + "  1] $ 1.00" + "\n" + "   2]  $ 2.00" + "\n" + "   3]  $ 3.00");
-            string amountChosen = Console.ReadLine();
+            double moneyAdded = int.Parse(Console.ReadLine()); Console.ReadLine();
 
-            CheckToSeeIfThereIsEnoughMoneyInWallet(amountChosen);
+            CompareMoneyPassedIn(moneyAdded);
 
 
             //SodaMachine.AcceptPaymentToRegister(amountChosen);
@@ -62,67 +59,26 @@ namespace SodaMachine.cs
             //customer.RemoveFundsFromWallet(amountChosen);
         }
 
-        public void CheckToSeeIfThereIsEnoughMoneyInWallet(string amountChosen)
+        
+
+        public static void BrowseInventory( List<Can> inventory, Can can)
         {
-            if (amountChosen == "1")
+            string sodaChoice = UserInterface.SelectProduct();
+            foreach (Can item in inventory)
             {
-                amountChosen += 1.00;
-
-                if (amountChosen < //how to compare to whats in wallet )    //not enough in wallet
+                if(sodaChoice == item.name)
                 {
-                    Console.WriteLine("Error!  There is not enough money in your wallet to complete this transaction");
-                    UserInterface.MainMenu();
-
+                    SodaMachine.RemoveFromMachineInventory(sodaChoice); //what is the problem here?
+                   
                 }
-                else if(amountChosen >= //money in wallet )   //more then enough in wallet
-                {
-                    customer.RemoveFundsFromWallet(amountChosen);
-
-                }
-                 
-            }
-            else if (amountChosen == "2")
-            {
-                amountChosen += 2.00;
-
-                if (amountChosen < //how to compare to whats in wallet )    //not enough in wallet
-                {
-                    Console.WriteLine("Error!  There is not enough money in your wallet to complete this transaction");
-                    UserInterface.MainMenu();
-
-                }
-                else if (amountChosen >= //money in wallet )   //more then enough in wallet
-                {
-                    customer.RemoveFundsFromWallet(amountChosen);
-
-                }
+                
 
             }
-            else if (amountChosen == "3")
-            {
-                amountChosen += 3.00;
-
-                if (amountChosen < //how to compare to whats in wallet )    //not enough in wallet
-                {
-                    Console.WriteLine("Error!  There is not enough money in your wallet to complete this transaction");
-                    UserInterface.MainMenu();
-
-                }
-                else if (amountChosen >= //money in wallet )   //more then enough in wallet
-                {
-                    customer.RemoveFundsFromWallet(amountChosen);
-
-                }
-
-            }
-
-
-
-
-
-
-
-
-
         }
+       
+
+
+
+
+    }
 }

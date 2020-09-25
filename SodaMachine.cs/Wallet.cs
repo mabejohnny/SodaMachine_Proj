@@ -44,8 +44,36 @@ namespace SodaMachine.cs
 
 
 
-        public void RemoveFundsFromWallet()
+        public void RemoveFundsFromWallet(string amountChosen)
         {
+            if (amountChosen == "1")
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    coins.Remove(new Quarter());
+
+
+                }
+            }
+            else if(amountChosen == "2")
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    coins.Remove(new Quarter());
+
+
+                }
+            }
+            else if(amountChosen == "3")
+            {
+                for (int i = 0; i < 12; i++)
+                {
+                    coins.Remove(new Quarter());
+
+
+                }
+            }
+           
 
         }
 
@@ -58,7 +86,7 @@ namespace SodaMachine.cs
         }
 
 
-
+        //public double method. foreach through wallet, return back
 
 
     }
