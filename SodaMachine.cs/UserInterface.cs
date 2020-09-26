@@ -7,46 +7,80 @@ namespace SodaMachine.cs
 {
     static class UserInterface
     {
-       
-
-
-     
-
-
+        public double moneyInserted;
 
 
         //public static string GetUserData(string output)
         //{
-            //Console.WriteLine(output);
-            //return Console.ReadLine();
+        //Console.WriteLine(output);
+        //return Console.ReadLine();
         //}
 
         //public static int GetAge()
         //{
-            //Console.WriteLine("Please enter your age");
-            //return int.Parse(Console.ReadLine());
+        //Console.WriteLine("Please enter your age");
+        //return int.Parse(Console.ReadLine());
         //} 
 
-       
-        public static string MainMenu()  
+        public static void MainMenu()
         {
-            Console.WriteLine("Thirsty? Try one of our thirst quenching beverages today!" + "\n" + "\n" + "\n");
-            Console.WriteLine("Hit any key to continue");
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("Please select from the following options: " + "\n" + "  1]  Insert Money" + "\n" + "   2]  Select Product" + "\n" + "   3]  Checkout");
-            string userChoiceMainMenu = Console.ReadLine();
-
-            return userChoiceMainMenu; //simulation 
-
-            
+            while (true)
+            {
+                Console.WriteLine("ICE COLD SODA");
+            }
            
+
+
         }
+
+        public static string HowMuchDoughYouSportingDog()
+        {
+            Console.WriteLine("*Press any key to continue");
+            Console.ReadLine();
+
+            Console.WriteLine("Please select the amount to insert:" + "\n" + "\n");
+            Console.WriteLine("          (1)  .25" + "\n");
+            Console.WriteLine("          (2)  .75" + "\n");
+            Console.WriteLine("          (3) 1.00" + "\n");
+            string moneyInserted = Console.ReadLine();
+
+            if (moneyInserted == "1")
+            {
+                moneyInserted += ".25";
+                SelectProduct();
+                return moneyInserted;
+
+            }
+            else if (moneyInserted == "2")
+            {
+                moneyInserted += ".75";
+                SelectProduct();
+                return moneyInserted;
+
+
+            }
+            else if (moneyInserted == "3")
+            {
+                moneyInserted += "1.00";
+                SelectProduct();
+                return moneyInserted;
+
+            }
+            else
+            {
+                Console.WriteLine("* Silly User... Try Again *");
+                SelectProduct();
+                return null;
+            }
+        }
+
 
         public static string SelectProduct()
         {
-            Console.WriteLine("Here are your choices" + "\n");
-            Console.WriteLine("   1]  Cola" + "\n" + "   2]  Orange Soda" + "\n" + "   3]  Root Beer");
+
+            Console.WriteLine("   (1) Refreshing Coca Cola");
+            Console.WriteLine("   (2) Charles Famous Orange Soda");
+            Console.WriteLine("   (3) Root Beer...");
             string sodaUserWants = Console.ReadLine();
 
             switch (sodaUserWants)
@@ -57,34 +91,17 @@ namespace SodaMachine.cs
                     return "Orange Soda";
                 case "3":
                     return "Root Beer";
-                   
+
                 default:
-                    Console.WriteLine("Error! Please Try Again");
+                    Console.WriteLine("Nice Try Silly User! Please Try Again");
                     Console.Clear();
                     return SelectProduct();
-                   
+
             }
 
         }
 
-
-        //sandbox
-        public void Run()
-        {
-            Console.WriteLine("(1) Display Vending Machine Items");
-            Console.WriteLine("(2) Purchase");
-            int choice = int.Parse(Console.ReadLine());
-            if (choice == 1)
-            {
-
-            }
-            else if (choice == 2)
-            {
-                Console.WriteLine("(1) Feed Money");
-                Console.WriteLine("(2) Select Product");
-                Console.WriteLine("(3) Finish Transaction");
-                int choice2 = int.Parse(Console.ReadLine());
-
-
-            }
+        
+    }
 }
+

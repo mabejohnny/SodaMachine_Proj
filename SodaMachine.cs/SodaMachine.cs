@@ -134,10 +134,11 @@ namespace SodaMachine.cs
                 {
                     return false;
 
-                }
 
+                }
             }
-            
+            return false;
+
         }
 
         public bool EnoughChange(double change, double moneyInRegister)
@@ -184,6 +185,10 @@ namespace SodaMachine.cs
             inventory.Remove(newCan);
 
         }
+
+       
+
+        
 
     }
 

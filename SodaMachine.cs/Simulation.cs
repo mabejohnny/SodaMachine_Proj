@@ -11,10 +11,10 @@ namespace SodaMachine.cs
 
 
         //member variables
-        SodaMachine SodaMachine = new SodaMachine();
+        SodaMachine sodaMachine = new SodaMachine();
         Customer customer = new Customer();
 
-        List<Can> inventory;
+        public List<Can> inventory;
 
 
 
@@ -48,13 +48,13 @@ namespace SodaMachine.cs
 
         }
 
-        public double HowMuchToAddToRegister()
+        public double HowMuchToAddToRegister(double moneyAdded)
         {
-            Console.WriteLine("Please select from the following options: " + "\n" + "\n" + "  1] $ 1.00" + "\n" + "   2]  $ 2.00" + "\n" + "   3]  $ 3.00");
-            double moneyAdded = int.Parse(Console.ReadLine()); Console.ReadLine();
+
+            
 
 
-            return moneyAdded;
+            
 
         }
 
@@ -64,14 +64,14 @@ namespace SodaMachine.cs
             {   
                 if (moneyAdded > item.Cost)
                 {
-                    SodaMachine.RefundMoney(moneyAdded);
+                    sodaMachine.RefundMoney(moneyAdded);
                     
 
                 }
                 else if (moneyAdded == item.Cost || moneyAdded < item.Cost)
                 {
-                    SodaMachine.AcceptPaymentToRegister(moneyAdded);
-                    SodaMachine.CalculateChange(moneyAdded, can);
+                    sodaMachine.AcceptPaymentToRegister(moneyAdded);
+                    sodaMachine.CalculateChange(moneyAdded, can);
                     
 
 
@@ -82,14 +82,16 @@ namespace SodaMachine.cs
 
 
 
-        public static void BrowseInventory( List<Can> inventory, Can can)
+        public void BrowseInventory(List<Can> inventory, Can can)
         {
             string sodaChoice = UserInterface.SelectProduct();
             foreach (Can item in inventory)
             {
                 if(sodaChoice == item.name)
                 {
-                    SodaMachine.RemoveFromMachineInventory(can); //what is the problem here?
+                    
+                    sodaMachine.RemoveFromMachineInventory(item);
+                   
                    
                 }
                 
