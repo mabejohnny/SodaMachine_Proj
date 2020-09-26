@@ -31,9 +31,8 @@ namespace SodaMachine.cs
         }
 
 
+
         //member methods
-
-
         public void CreateRegister()
         {
             for (int i = 0; i < 12; i++)
@@ -70,9 +69,6 @@ namespace SodaMachine.cs
                 inventory.Add(new RootBeer());
             }
         }
-
-        //public double method. foreach through wallet, return back
-        //If enough money is not passed in, don’t complete transaction and give the money back. 
 
         public bool EnoughMoneyForPurchase(double moneyCustomerPaid, Can canSelected)
         {

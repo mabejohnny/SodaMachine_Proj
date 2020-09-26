@@ -15,6 +15,7 @@ namespace SodaMachine.cs
         Customer customer = new Customer();
 
         public List<Can> inventory;
+        public List<Coin> register;
 
 
 
@@ -28,35 +29,24 @@ namespace SodaMachine.cs
         }
 
 
+        public void RunMachine()
+        {
+            while (true)
+            {
+                UserInterface.MainMenu();
+                UserInterface.HowMuchDoughYouSportingDog(); 
+                //browse inventory 
+
+            }
+        }
+
+
 
 
         //member methods
-        public void GetUserInfoFromMainMenu(string userChoiceMainMenu)
-        {
-            if (userChoiceMainMenu == "1")
-            {
 
-                HowMuchToAddToRegister();//check to see how mcuh they want to insert
-
-            }
-            else if (userChoiceMainMenu == "2" || userChoiceMainMenu == "3")
-            {
-                ;  //GetUserInfoFromMainMenu(); 
-
-            }
-   
-
-        }
-
-        public double HowMuchToAddToRegister(double moneyAdded)
-        {
-
-            
-
-
-            
-
-        }
+    
+      
 
         public void CompareMoneyPassedIn(double moneyAdded, Can can)
         {

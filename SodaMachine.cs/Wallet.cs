@@ -12,15 +12,12 @@ namespace SodaMachine.cs
         
 
 
-
         //constructor
         public Wallet()
         {
             coins = new List<Coin>();
             CreateWallet();
             
-           
-
         }
 
 
@@ -41,8 +38,6 @@ namespace SodaMachine.cs
                 coins.Add(new Nickle());
             }
         }
-
-
 
         public void RemoveFundsFromWallet(string amountChosen)
         {
@@ -72,18 +67,7 @@ namespace SodaMachine.cs
 
 
                 }
-            }
-           
-
+            }     
         }
-
-
-
-
-     
-
-      
-
-
     }
 }

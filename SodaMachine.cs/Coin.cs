@@ -21,14 +21,6 @@ namespace SodaMachine.cs
         protected double value;
 
 
-
-
-
-
-
-
-
-
         //member methods
 
 

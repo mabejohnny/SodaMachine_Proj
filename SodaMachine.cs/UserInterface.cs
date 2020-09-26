@@ -9,19 +9,6 @@ namespace SodaMachine.cs
     {
         
 
-
-        //public static string GetUserData(string output)
-        //{
-        //Console.WriteLine(output);
-        //return Console.ReadLine();
-        //}
-
-        //public static int GetAge()
-        //{
-        //Console.WriteLine("Please enter your age");
-        //return int.Parse(Console.ReadLine());
-        //} 
-
         public static void MainMenu()
         {
             while (true)
@@ -29,8 +16,6 @@ namespace SodaMachine.cs
                 Console.WriteLine("ICE COLD SODA");
             }
            
-
-
         }
 
         public static string HowMuchDoughYouSportingDog()
