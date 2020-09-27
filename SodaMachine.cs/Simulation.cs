@@ -53,6 +53,7 @@ namespace SodaMachine.cs
             }
             else if(choice == '2') // purchase soda
             {
+                DealWithTheDoughBeforeTheSoda(); 
 
 
             }
@@ -62,8 +63,14 @@ namespace SodaMachine.cs
             }
 
         }
-    
-      
+
+       public void DealWithTheDoughBeforeTheSoda()
+        {
+            List<Coin> choiceOffundsInsertedIntoMachine = UserInterface.Payment(customer);
+        }
+
+
+
 
         public void CompareMoneyPassedIn(double moneyAdded, Can can)
         {

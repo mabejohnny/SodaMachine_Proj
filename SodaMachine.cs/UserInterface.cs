@@ -64,6 +64,49 @@ namespace SodaMachine.cs
            
         }
 
+        public static List<Coin> Payment(Customer customer)
+        {
+            List<Coin> keepTrackOfWhatsGoingIntoMachine = new List<Coin>();
+            double totalInMachineSoFar = 0;
+
+            while (true)
+            {
+                Console.WriteLine("Total Inserted: " + "" + totalInMachineSoFar);
+                string coinChoice = PossibleCoinChoices();
+
+
+            }
+
+            
+
+        }
+
+        public static string PossibleCoinChoices()
+        {
+            Console.WriteLine("     (1)   Quarter" + "\n");
+            Console.WriteLine("     (2)   Dime" + "\n");
+            Console.WriteLine("     (3)   Nickle" + "\n");
+            Console.WriteLine("     (4)   Penny" + "\n");
+
+            string coinChoice = Console.ReadLine();
+
+            switch (coinChoice)
+            {
+                case "1":
+                    return "Quarter";
+                case "2":
+                    return "Dime";
+                case "3":
+                    return "Nickle";
+                case "4":
+                    return "Penny";
+                default:
+                    Console.WriteLine("I worked all weekend to make sure you could not break this!");
+                    return PossibleCoinChoices();
+            }
+
+        }
+
         public static double HowMuchDoughYouSportingDog()
         {
             Console.WriteLine("*Press any key to continue");
