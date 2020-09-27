@@ -17,7 +17,6 @@ namespace SodaMachine.cs
         {
             Console.Clear();
             StayAtTopOfScreen();
-            Console.WriteLine("          Select a choice");
                 
         }
 
@@ -74,16 +73,11 @@ namespace SodaMachine.cs
                 Console.WriteLine("Total Inserted: " + "" + totalInMachineSoFar);
                 string coinChoice = PossibleCoinChoices();
 
-                if(customer.CheckDaWalletOut(coinChoice) == true)
+                if(customer.CheckWalletForFunds(coinChoice) == true)
                 {
                     Coin transferedCoin = customer.RemoveCoinFromWalletIntoMachine(coinChoice);
                 }
-
-
             }
-
-            
-
         }
 
         public static string PossibleCoinChoices()
@@ -111,62 +105,28 @@ namespace SodaMachine.cs
                     Console.WriteLine("Im going to make you do shitty math before you will ever enjoy one of my ice cold refreshing beverages if you keep playing dumb!");
                     return PossibleCoinChoices();
             }
+        }
+
+       
+
+        public static void SelectProduct(List<Coin> transferedOut, SodaMachine sodaMachine, Customer customer)
+        {
+            string canChoice = GetSodaChoice();
+            double totalInserted = sodaMachine.TotalInserted()
+
+
 
         }
 
-        public static double HowMuchDoughYouSportingDog()
+        public static string GetSodaChoice()
         {
-            Console.WriteLine("*Press any key to continue");
-            Console.ReadLine();
-
-            Console.WriteLine("Please select the amount to insert:" + "\n" + "\n");
-            Console.WriteLine("          (1)  .25" + "\n");
-            Console.WriteLine("          (2)  .75" + "\n");
-            Console.WriteLine("          (3) 1.00" + "\n");
-            double moneyInserted = double.Parse(Console.ReadLine());
-
-            if (moneyInserted == 1)
-            {
-                moneyInserted += Quarter;
-                SelectProduct();
-
-                return moneyInserted;
-
-            }
-            else if (moneyInserted == "2")
-            {
-                moneyInserted += ".75";
-                SelectProduct();
-                return moneyInserted;
-
-
-            }
-            else if (moneyInserted == "3")
-            {
-                moneyInserted += "1.00";
-                SelectProduct();
-                return moneyInserted;
-
-            }
-            else
-            {
-                Console.WriteLine("* Silly User... Try Again *");
-                return HowMuchDoughYouSportingDog();
-            }
-        }
-
-
-
-        public static string SelectProduct(List<Coin>)
-        {
-
             Console.WriteLine("   (1) Refreshing Coca Cola");
             Console.WriteLine("   (2) Good Ol'Charley Boys Famous Orange Soda");
             Console.WriteLine("   (3) Root Beer...(Turd)");
             string canChoice = Console.ReadLine();
             Console.Clear();
 
-            switch (sodaUserWants)
+            switch (canChoice)
             {
                 case "1":
                     Console.WriteLine("Did you know:" + "\n" + "\n");
@@ -184,7 +144,7 @@ namespace SodaMachine.cs
                 default:
                     Console.WriteLine("Nice Try Silly User! Please Try Again");
                     Console.Clear();
-                    return SelectProduct();
+                    return GetSodaChoice();
 
             }
 

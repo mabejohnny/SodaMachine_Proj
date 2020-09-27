@@ -70,6 +70,18 @@ namespace SodaMachine.cs
             }
         }
 
+        public double TotalInserted(List<Coin> coins)
+        {
+            double total = 0;
+
+            foreach (Coin item in coins)
+            {
+                total += item.Value;
+
+            }
+            return total;
+        }
+
         public bool EnoughMoneyForPurchase(double moneyCustomerPaid, Can canSelected)
         {
             if (moneyCustomerPaid > canSelected.Cost)
