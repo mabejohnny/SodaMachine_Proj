@@ -117,11 +117,11 @@ namespace SodaMachine.cs
             }
         }
 
-        public bool SufficientInventory(Can can)
+        public bool CheckInventory(string sodaName)
         {
             foreach (Can item in inventory)
             {
-                if (can.name == item.name)  
+                if (item.name == sodaName)  
                 {
                     return true;
 
@@ -137,7 +137,9 @@ namespace SodaMachine.cs
 
         }
 
-        public bool EnoughChange(double change, double moneyInRegister)
+        
+
+        public bool CheckChange(double change, double moneyInRegister)
         {
             if (moneyInRegister > change)
             {

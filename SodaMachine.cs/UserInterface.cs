@@ -8,17 +8,63 @@ namespace SodaMachine.cs
     static class UserInterface
     {
         
+        public static void StayAtTopOfScreen()
+        {
+            Console.WriteLine("                                   *   ENJOY A REFRESHING ICE COLD SODA   *");
+        }
 
         public static void MainMenu()
         {
-            while (true)
+            Console.Clear();
+            StayAtTopOfScreen();
+            Console.WriteLine("          Select a choice");
+                
+        }
+
+        public static void WhatDoeTheUserWantToDo()
+        {
+            Console.WriteLine("     (1)  Browse Inventory");
+            Console.WriteLine("     (2)  Purchase Soda");
+            Console.WriteLine("     (3)  Open Backpack");
+
+        }
+
+        public static char CaptureChoices()
+        {
+            char choice = char.Parse(Console.ReadLine());
+
+            switch (choice)
             {
-                Console.WriteLine("ICE COLD SODA");
+                case '1' :
+                    return choice;
+                case '2' :
+                    return choice;
+                case '3' :
+                    return choice;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Not going to get me Mr. fancy pants instructor");
+                    return CaptureChoices();
+
+            }
+        }
+
+       public static void ShowInventoryToUser(List<Can> inventory)
+        {
+            Console.WriteLine("Here are the ice cold sodas we have in stock:" + "\n");
+            int counter = 1;
+            foreach (Can item in inventory)
+            {
+                counter++;
+                Console.WriteLine(counter + " " + item.name + " " + "$ " + item.Cost + "\n");
+                Console.WriteLine(" * Press any key when you are finished browsing");
+                Console.ReadLine();
+
             }
            
         }
 
-        public static string HowMuchDoughYouSportingDog()
+        public static double HowMuchDoughYouSportingDog()
         {
             Console.WriteLine("*Press any key to continue");
             Console.ReadLine();
@@ -27,11 +73,11 @@ namespace SodaMachine.cs
             Console.WriteLine("          (1)  .25" + "\n");
             Console.WriteLine("          (2)  .75" + "\n");
             Console.WriteLine("          (3) 1.00" + "\n");
-            string moneyInserted = Console.ReadLine();
+            double moneyInserted = double.Parse(Console.ReadLine());
 
-            if (moneyInserted == "1")
+            if (moneyInserted == 1)
             {
-                moneyInserted += ".25";
+                moneyInserted += Quarter;
                 SelectProduct();
 
                 return moneyInserted;
@@ -58,6 +104,8 @@ namespace SodaMachine.cs
                 return HowMuchDoughYouSportingDog();
             }
         }
+
+
 
         public static string SelectProduct()
         {

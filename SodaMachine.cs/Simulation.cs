@@ -26,25 +26,42 @@ namespace SodaMachine.cs
         public Simulation()
         {
 
+
         }
 
 
         public void RunMachine()
         {
-            while (true)
-            {
-                UserInterface.MainMenu();
-                UserInterface.HowMuchDoughYouSportingDog(); 
-                //browse inventory 
-
-            }
+            UserInterface.MainMenu();
+            UserInterface.WhatDoeTheUserWantToDo();
+            char choice = UserInterface.CaptureChoices();
+            GetInfoToStartTheShow(choice);
+            
         }
 
 
 
 
         //member methods
+        public void GetInfoToStartTheShow(char choice)
+        {
+            UserInterface.MainMenu();
 
+            if(choice == '1') // show inventory
+            {
+                UserInterface.ShowInventoryToUser(sodaMachine.inventory);
+            }
+            else if(choice == '2') // purchase soda
+            {
+
+
+            }
+            else if(choice == '3') // view contents of backPack
+            {
+
+            }
+
+        }
     
       
 
