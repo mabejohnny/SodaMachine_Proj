@@ -74,6 +74,11 @@ namespace SodaMachine.cs
                 Console.WriteLine("Total Inserted: " + "" + totalInMachineSoFar);
                 string coinChoice = PossibleCoinChoices();
 
+                if(customer.CheckDaWalletOut(coinChoice) == true)
+                {
+                    Coin transferedCoin = customer.RemoveCoinFromWalletIntoMachine(coinChoice);
+                }
+
 
             }
 
@@ -101,7 +106,9 @@ namespace SodaMachine.cs
                 case "4":
                     return "Penny";
                 default:
-                    Console.WriteLine("I worked all weekend to make sure you could not break this!");
+                    Console.Clear();
+                    Console.WriteLine("I worked all weekend to make sure you could not break this!" + "\n");
+                    Console.WriteLine("Im going to make you do shitty math before you will ever enjoy one of my ice cold refreshing beverages if you keep playing dumb!");
                     return PossibleCoinChoices();
             }
 
@@ -150,13 +157,13 @@ namespace SodaMachine.cs
 
 
 
-        public static string SelectProduct()
+        public static string SelectProduct(List<Coin>)
         {
 
             Console.WriteLine("   (1) Refreshing Coca Cola");
-            Console.WriteLine("   (2) Charles Famous Orange Soda");
-            Console.WriteLine("   (3) Root Beer...");
-            string sodaUserWants = Console.ReadLine();
+            Console.WriteLine("   (2) Good Ol'Charley Boys Famous Orange Soda");
+            Console.WriteLine("   (3) Root Beer...(Turd)");
+            string canChoice = Console.ReadLine();
             Console.Clear();
 
             switch (sodaUserWants)

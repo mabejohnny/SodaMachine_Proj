@@ -36,7 +36,20 @@ namespace SodaMachine.cs
                     backpack.cans.Add(item);
                 }
             }
+        }
 
+        public Coin RemoveCoinFromWalletIntoMachine(string searchingFor)
+        {
+            foreach (Coin item in wallet.coins)
+            {
+                if(item.name == searchingFor)
+                {
+                    wallet.coins.Remove(item);
+                    return item;
+                }
+
+            }
+            return null; //I dont know what else to put here...Its expecting one eitherway?
 
 
         }

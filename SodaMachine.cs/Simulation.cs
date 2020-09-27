@@ -67,6 +67,7 @@ namespace SodaMachine.cs
        public void DealWithTheDoughBeforeTheSoda()
         {
             List<Coin> choiceOffundsInsertedIntoMachine = UserInterface.Payment(customer);
+            UserInterface.SelectProduct(choiceOffundsInsertedIntoMachine, sodaMachine, customer);
         }
 
 
