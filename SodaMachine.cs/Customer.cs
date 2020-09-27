@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace SodaMachine.cs
 {
-    class Customer 
+    class Customer
     {
 
         //member variables
@@ -20,7 +20,7 @@ namespace SodaMachine.cs
         //constructor
         public Customer()
         {
-            
+
 
         }
 
@@ -42,7 +42,7 @@ namespace SodaMachine.cs
         {
             foreach (Coin item in wallet.coins)
             {
-                if(item.name == searchingFor)
+                if (item.name == searchingFor)
                 {
                     wallet.coins.Remove(item);
                     return item;
@@ -54,10 +54,18 @@ namespace SodaMachine.cs
 
         }
 
+        public bool CheckWalletForFunds(string searchingFor)
+        {
+            foreach (Coin item in wallet.coins)
+            {
+                if (item.name == searchingFor)
+                {
+                    return true;
+                }
+            }
+            return false;
 
-
-
-
-
+        }
     }
 }
+
