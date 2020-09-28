@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Transactions;
 
 namespace SodaMachine.cs
 {
@@ -104,11 +105,11 @@ namespace SodaMachine.cs
             }
         }
 
-        public static void SelectProduct(List<Coin> transferedOut, SodaMachine sodaMachine, Customer customer)
+        public static void SelectProduct(List<Coin> transferedFunds, SodaMachine sodaMachine, Customer customer)
         {
             string canChoice = GetSodaChoice();
-            double totalInserted = sodaMachine.TotalInserted(List<Coin> coins)
-
+            double totalpassed = sodaMachine.TotalInserted(transferedFunds);
+            double canCost = sodaMachine.ReturnSodaPrice(canChoice);
         }
 
         public static string GetSodaChoice()

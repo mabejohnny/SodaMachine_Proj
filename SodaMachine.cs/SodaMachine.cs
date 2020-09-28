@@ -170,6 +170,20 @@ namespace SodaMachine.cs
             inventory.Remove(newCan);
         }
 
+        public double ReturnSodaPrice(string sodaChoice)
+        {
+            foreach (Can item in inventory)
+            {
+                if(item.name == sodaChoice)
+                {
+                    return item.Cost;
+                }
+
+            }
+            return 0.00;
+
+        }
+
     }
 
 }

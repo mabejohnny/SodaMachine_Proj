@@ -42,10 +42,7 @@ namespace SodaMachine.cs
             {
                 DealWithTheDoughBeforeTheSoda(); 
             }
-            else if(choice == '3') // view contents of backPack
-            {
-                UserInterface.DisplayBackPackContents();
-            }
+           
         }
 
        public void DealWithTheDoughBeforeTheSoda()
@@ -74,7 +71,7 @@ namespace SodaMachine.cs
 
         public void BrowseInventory(List<Can> inventory, Can can)
         {
-            string sodaChoice = UserInterface.SelectProduct();
+            
             foreach (Can item in inventory)
             {
                 if(sodaChoice == item.name)
