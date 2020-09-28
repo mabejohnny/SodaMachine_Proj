@@ -12,7 +12,7 @@ namespace SodaMachine.cs
         public static void StayAtTopOfScreen()
         {
             Console.WriteLine("                 " +
-                "                  *   ENJOY A REFRESHING ICE COLD SODA   *");
+                "                     *   ENJOY A REFRESHING ICE COLD SODA   *" + "\n" + "\n" + "\n");
         }
 
         public static void MainMenu()
@@ -54,11 +54,13 @@ namespace SodaMachine.cs
             int counter = 1;
             foreach (Can item in inventory)
             {
-                counter++;
-                Console.WriteLine(counter + " " + item.name + " " + "$ " + item.Cost + "\n");
-                Console.WriteLine(" * Press any key when you are finished browsing");
-                Console.ReadLine();
-            }  
+                counter++;     
+                Console.WriteLine(counter + " " + ":" + item.name + " " + "$ " + item.Cost + "\n");
+            }
+            Console.WriteLine(" * Press any key when you are finished browsing");
+            Console.ReadLine();
+            MainMenu();
+            WhatDoeTheUserWantToDo();
         }
 
         public static List<Coin> Payment(Customer customer)
@@ -90,13 +92,13 @@ namespace SodaMachine.cs
             switch (coinChoice)
             {
                 case "1":
-                    return "Quarter";
+                    return coinChoice;
                 case "2":
-                    return "Dime";
+                    return coinChoice;
                 case "3":
-                    return "Nickle";
+                    return coinChoice;
                 case "4":
-                    return "Penny";
+                    return coinChoice;
                 default:
                     Console.Clear();
                     Console.WriteLine("I worked all weekend to make sure you could not break this!" + "\n");

@@ -90,25 +90,19 @@ namespace SodaMachine.cs
         {
             if (amountchosen == 1)
             {
-                for (int i = 0; i < 4; i++)
-                {
                     register.Add(new Quarter());
-                }
-
             }
-            else if (amountchosen == 2)
+            if (amountchosen == 2)
             {
-                for (int i = 0; i < 8; i++)
-                {
-                    register.Add(new Quarter());
-                }
+                register.Add(new Dime());
             }
-            else if (amountchosen == 3)
+            if (amountchosen == 3)
             {
-                for (int i = 0; i < 12; i++)
-                {
-                    register.Add(new Quarter());
-                }
+                register.Add(new Nickle());
+            }
+            if (amountchosen == 4)
+            {
+                register.Add(new Penny());
             }
         }
 

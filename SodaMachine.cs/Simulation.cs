@@ -68,20 +68,6 @@ namespace SodaMachine.cs
                 }
             }
         }
-
-        public void BrowseInventory(List<Can> inventory, Can can)
-        {
-            
-            foreach (Can item in inventory)
-            {
-                if(sodaChoice == item.name)
-                {  
-                    sodaMachine.RemoveFromMachineInventory(item); 
-                }
-            }
-
-        }
-
  
     }
 

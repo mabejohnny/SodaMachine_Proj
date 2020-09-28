@@ -4,13 +4,13 @@ using System.Text;
 
 namespace SodaMachine.cs
 {
-    class Wallet 
+    class Wallet
     {
-     
 
-       public List<Coin> coins;
-       public Card card = new Card();
-        
+
+        public List<Coin> coins;
+        public Card card = new Card();
+
 
         public Wallet()
         {
@@ -38,26 +38,22 @@ namespace SodaMachine.cs
         {
             if (amountChosen == "1")
             {
-                for (int i = 0; i < 4; i++)
-                {
-                    coins.Remove(new Quarter());
-                }
+                coins.Remove(new Quarter());
             }
-            else if(amountChosen == "2")
+            if (amountChosen == "2")
             {
-                for (int i = 0; i < 8; i++)
-                {
-                    coins.Remove(new Quarter());
-                }
+                coins.Remove(new Dime());
             }
-            else if(amountChosen == "3")
+            if (amountChosen == "3")
             {
-                for (int i = 0; i < 12; i++)
-                {
-                    coins.Remove(new Quarter());
-                }
+                coins.Remove(new Nickle());
             }
-            
+            if (amountChosen == "4")
+            {
+                coins.Remove(new Penny());
+            }
+
         }
     }
 }
+
