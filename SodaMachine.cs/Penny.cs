@@ -7,21 +7,11 @@ namespace SodaMachine.cs
     class Penny : Coin
     {
 
-        //member variables
-
-
-
-
-        //constructor
         public Penny()
         {
             name = "Penny";
             value = .01;
-
         }
 
-
-
-        //member methods
     }
 }

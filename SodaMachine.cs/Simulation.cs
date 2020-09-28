@@ -9,8 +9,6 @@ namespace SodaMachine.cs
     class Simulation
     {
 
-
-        //member variables
         SodaMachine sodaMachine = new SodaMachine();
         Customer customer = new Customer();
 
@@ -18,17 +16,11 @@ namespace SodaMachine.cs
         public List<Coin> register;
 
 
-
-
-
-
-        //constructor
         public Simulation()
         {
 
 
         }
-
 
         public void RunMachine()
         {
@@ -36,13 +28,8 @@ namespace SodaMachine.cs
             UserInterface.WhatDoeTheUserWantToDo();
             char choice = UserInterface.CaptureChoices();
             GetInfoToStartTheShow(choice);
-            
         }
 
-
-
-
-        //member methods
         public void GetInfoToStartTheShow(char choice)
         {
             UserInterface.MainMenu();
@@ -54,24 +41,20 @@ namespace SodaMachine.cs
             else if(choice == '2') // purchase soda
             {
                 DealWithTheDoughBeforeTheSoda(); 
-
-
             }
             else if(choice == '3') // view contents of backPack
             {
-
+                UserInterface.DisplayBackPackContents();
             }
-
         }
 
        public void DealWithTheDoughBeforeTheSoda()
         {
             List<Coin> choiceOffundsInsertedIntoMachine = UserInterface.Payment(customer);
             UserInterface.SelectProduct(choiceOffundsInsertedIntoMachine, sodaMachine, customer);
+            Console.WriteLine("Press 'enter' to return to the main menu:");
+            Console.Read();
         }
-
-
-
 
         public void CompareMoneyPassedIn(double moneyAdded, Can can)
         {
@@ -80,22 +63,14 @@ namespace SodaMachine.cs
                 if (moneyAdded > item.Cost)
                 {
                     sodaMachine.RefundMoney(moneyAdded);
-                    
-
                 }
                 else if (moneyAdded == item.Cost || moneyAdded < item.Cost)
                 {
                     sodaMachine.AcceptPaymentToRegister(moneyAdded);
                     sodaMachine.CalculateChange(moneyAdded, can);
-                    
-
-
                 }
-
             }
         }
-
-
 
         public void BrowseInventory(List<Can> inventory, Can can)
         {
@@ -103,20 +78,14 @@ namespace SodaMachine.cs
             foreach (Can item in inventory)
             {
                 if(sodaChoice == item.name)
-                {
-                    
-                    sodaMachine.RemoveFromMachineInventory(item);
-                   
-                   
+                {  
+                    sodaMachine.RemoveFromMachineInventory(item); 
                 }
-                
-
             }
+
         }
-       
 
-
-
-
+ 
     }
+
 }

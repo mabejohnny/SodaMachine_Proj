@@ -7,20 +7,11 @@ namespace SodaMachine.cs
     class RootBeer : Can 
     {
 
-        //member variables
-
-
-
-
-        //constructor
         public RootBeer()
         {
             name = "Root Beer";
             cost = .60;
         }
 
-
-
-        //member methods
     }
 }

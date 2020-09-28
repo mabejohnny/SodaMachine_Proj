@@ -7,8 +7,7 @@ namespace SodaMachine.cs
 {
     public class Coin 
     {
-
-        //member variables
+   
         public string name;
         
         public double Value
@@ -19,12 +18,6 @@ namespace SodaMachine.cs
             }
         }
         protected double value;
-
-
-        //member methods
-
-
-
 
     }
 }

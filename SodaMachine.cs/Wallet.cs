@@ -6,22 +6,17 @@ namespace SodaMachine.cs
 {
     class Wallet 
     {
-        //member variables
+     
+
        public List<Coin> coins;
        public Card card = new Card();
         
 
-
-        //constructor
         public Wallet()
         {
             coins = new List<Coin>();
             CreateWallet();
-            
         }
-
-
-        //member methods
 
         public void CreateWallet()
         {
@@ -46,8 +41,6 @@ namespace SodaMachine.cs
                 for (int i = 0; i < 4; i++)
                 {
                     coins.Remove(new Quarter());
-
-
                 }
             }
             else if(amountChosen == "2")
@@ -55,8 +48,6 @@ namespace SodaMachine.cs
                 for (int i = 0; i < 8; i++)
                 {
                     coins.Remove(new Quarter());
-
-
                 }
             }
             else if(amountChosen == "3")
@@ -64,10 +55,9 @@ namespace SodaMachine.cs
                 for (int i = 0; i < 12; i++)
                 {
                     coins.Remove(new Quarter());
-
-
                 }
-            }     
+            }
+            
         }
     }
 }

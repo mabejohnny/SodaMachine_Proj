@@ -10,15 +10,10 @@ namespace SodaMachine.cs
     class SodaMachine
     {
 
-        //member variables
         public List<Coin> register;
         public List<Can> inventory;
 
 
-
-
-
-        //constructor
         public SodaMachine()
         {
             register = new List<Coin>();
@@ -26,13 +21,10 @@ namespace SodaMachine.cs
 
             inventory = new List<Can>();
             CreateInventory();
-
-
         }
 
 
 
-        //member methods
         public void CreateRegister()
         {
             for (int i = 0; i < 12; i++)
@@ -51,7 +43,6 @@ namespace SodaMachine.cs
             {
                 register.Add(new Penny());
             }
-
         }
 
         public void CreateInventory()
@@ -77,7 +68,6 @@ namespace SodaMachine.cs
             foreach (Coin item in coins)
             {
                 total += item.Value;
-
             }
             return total;
         }
@@ -96,8 +86,6 @@ namespace SodaMachine.cs
             customer.wallet.coins.AddRange(coinsGivenByCustomer);
         }
 
-
-
         public void AcceptPaymentToRegister(double amountchosen)
         {
             if (amountchosen == 1)
@@ -105,7 +93,6 @@ namespace SodaMachine.cs
                 for (int i = 0; i < 4; i++)
                 {
                     register.Add(new Quarter());
-
                 }
 
             }
@@ -114,17 +101,13 @@ namespace SodaMachine.cs
                 for (int i = 0; i < 8; i++)
                 {
                     register.Add(new Quarter());
-
                 }
-
-
             }
             else if (amountchosen == 3)
             {
                 for (int i = 0; i < 12; i++)
                 {
                     register.Add(new Quarter());
-
                 }
             }
         }
@@ -136,20 +119,14 @@ namespace SodaMachine.cs
                 if (item.name == sodaName)  
                 {
                     return true;
-
                 }
                 else
                 {
                     return false;
-
-
                 }
             }
             return false;
-
         }
-
-        
 
         public bool CheckChange(double change, double moneyInRegister)
         {
@@ -186,19 +163,12 @@ namespace SodaMachine.cs
             refundedMoney = moneyAdded;
 
             return refundedMoney;
-
         }
-
 
         public void RemoveFromMachineInventory(Can newCan)
         {
             inventory.Remove(newCan);
-
         }
-
-       
-
-        
 
     }
 

@@ -6,24 +6,12 @@ namespace SodaMachine.cs
 {
     class Dime : Coin
     {
-        //member variables
         
-        
-
-
-
-        //constructor
         public Dime()
         {
              name = "Dime";
              value = .10;
-
-            
         }
 
-
-
-
-        //member methods
     }
 }

@@ -6,14 +6,12 @@ namespace SodaMachine.cs
 {
     class Card 
     {
-        //member variables
+        
+
         public double AvailableFunds;
         private double availableFunds;
 
 
-
-
-        //constructor
         public Card()
         {
             this.AvailableFunds = 200;
@@ -21,8 +19,5 @@ namespace SodaMachine.cs
 
         }
 
-
-
-        //member methods
     }
 }

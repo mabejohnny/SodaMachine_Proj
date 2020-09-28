@@ -5,12 +5,12 @@ using System.Transactions;
 
 namespace SodaMachine.cs
 {
+
     public class Can 
     {
 
-
-        //member variables
         public string name;
+
         public double Cost
         {
             get
@@ -19,18 +19,6 @@ namespace SodaMachine.cs
             }
         }
         protected double cost;
-
-
-
-
-
-        
-
-
-
-
-        //member methods
-
 
     }
 }

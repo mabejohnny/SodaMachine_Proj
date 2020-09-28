@@ -10,7 +10,8 @@ namespace SodaMachine.cs
         
         public static void StayAtTopOfScreen()
         {
-            Console.WriteLine("                                   *   ENJOY A REFRESHING ICE COLD SODA   *");
+            Console.WriteLine("                 " +
+                "                  *   ENJOY A REFRESHING ICE COLD SODA   *");
         }
 
         public static void MainMenu()
@@ -25,7 +26,6 @@ namespace SodaMachine.cs
             Console.WriteLine("     (1)  Browse Inventory");
             Console.WriteLine("     (2)  Purchase Soda");
             Console.WriteLine("     (3)  Open Backpack");
-
         }
 
         public static char CaptureChoices()
@@ -44,7 +44,6 @@ namespace SodaMachine.cs
                     Console.Clear();
                     Console.WriteLine("Not going to get me Mr. fancy pants instructor");
                     return CaptureChoices();
-
             }
         }
 
@@ -58,9 +57,7 @@ namespace SodaMachine.cs
                 Console.WriteLine(counter + " " + item.name + " " + "$ " + item.Cost + "\n");
                 Console.WriteLine(" * Press any key when you are finished browsing");
                 Console.ReadLine();
-
-            }
-           
+            }  
         }
 
         public static List<Coin> Payment(Customer customer)
@@ -107,14 +104,10 @@ namespace SodaMachine.cs
             }
         }
 
-       
-
         public static void SelectProduct(List<Coin> transferedOut, SodaMachine sodaMachine, Customer customer)
         {
             string canChoice = GetSodaChoice();
-            double totalInserted = sodaMachine.TotalInserted()
-
-
+            double totalInserted = sodaMachine.TotalInserted(List<Coin> coins)
 
         }
 
@@ -147,10 +140,7 @@ namespace SodaMachine.cs
                     return GetSodaChoice();
 
             }
-
-        }
-
-        
+        }   
     }
 }
 

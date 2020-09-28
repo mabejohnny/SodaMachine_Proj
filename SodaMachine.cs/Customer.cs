@@ -9,15 +9,13 @@ namespace SodaMachine.cs
     class Customer
     {
 
-        //member variables
+  
         public BackPack backpack = new BackPack();
         public Wallet wallet = new Wallet();
         public List<Can> cans;
 
 
 
-
-        //constructor
         public Customer()
         {
 
@@ -25,8 +23,6 @@ namespace SodaMachine.cs
         }
 
 
-
-        //member methods
         public void AddToBackPack(string itemPurchased, Can can)
         {
             foreach (Can item in cans)
@@ -47,11 +43,8 @@ namespace SodaMachine.cs
                     wallet.coins.Remove(item);
                     return item;
                 }
-
             }
             return null; //I dont know what else to put here...Its expecting one eitherway?
-
-
         }
 
         public bool CheckWalletForFunds(string searchingFor)
